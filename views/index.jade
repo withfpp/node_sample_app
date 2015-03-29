@@ -2,4 +2,25 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to Restarnt App
+  form(role='form' name="login-form" id="login-form" method="post" action="/users/login")
+    .col-sm-6.col-sm-offset-3
+      .form-group
+        label(for='email').col-sm-4 email
+        .input-group.col-sm-8
+          input#email.form-control(type='email', name='email', placeholder='email', required='')
+      .form-group
+        label(for='password').col-sm-4 password
+        .input-group.col-sm-8
+          input#password.form-control(type='password', name='password', placeholder='password', required='')
+      .form-group
+        label(for='rememberMe').col-sm-4 remember me
+        .input-group
+          input#rememberMe(type='checkbox', name='rememberMe')      
+      .form-submit
+        input(type="submit" value="Log in").btn.btn-info.col-sm-12
+      if error 
+        div.error(style="color:red") 
+          p #{error}
+
+      a(href="/users/create") Create new account
