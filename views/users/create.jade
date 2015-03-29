@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      form(role='form' name="create-user-form" id="create-user-form" method="post")
+        .col-lg-6.col-sm-offset-3
+          .form-group
+            label(for='firstName').col-sm-4 First Name
+            .input-group.col-sm-8
+              input#firstName.form-control(type='text', name='firstName', placeholder='firstname')
+          .form-group
+            label(for='lastName').col-sm-4 Last Name
+            .input-group.col-sm-8
+              input#lastName.form-control(type='text', name='lastName', placeholder='lastname')
+          .form-group
+            label(for='roomNumber').col-sm-4 Room Number
+            .input-group.col-sm-8
+              input#roomNumber.form-control( type='text', name='roomNumber', placeholder='roomNumber')
+          .form-group
+            label(for='email').col-sm-4 email
+            .input-group.col-sm-8
+              input#email.form-control( type='email', name='email', placeholder='email')
+          .form-group
+            label(for='password').col-sm-4 password
+            .input-group.col-sm-8
+              input#password.form-control( type='password', name='password', placeholder='password')
+          .form-submit
+            input(type="submit" value="Create Account").btn.btn-info.col-sm-12
+          span(style="color:red") #{error}
+          
+
+   
